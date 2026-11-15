@@ -20,7 +20,7 @@ Trois questions, trois réponses :
 
 Usage :
     ctx-cost.py                  # tous les jours, tous les projets
-    ctx-cost.py --day 2026-11-14 # un jour
+    ctx-cost.py --day AAAA-MM-JJ # un jour
     ctx-cost.py --json           # sortie machine
     ctx-cost.py --top 20         # les prompts les plus chers (défaut 10)
 
