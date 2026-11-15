@@ -46,14 +46,26 @@ Dans Claude Code :
 Puis **redémarrez la session** : les hooks et la barre d'état se chargent au
 démarrage.
 
+### Si la commande `/plugin` répond « isn't available in this environment »
+
+C'est ce que répond l'extension VS Code. Le binaire de Claude Code, lui, est
+livré **avec l'extension** : on l'appelle directement.
+
+```bash
+# le binaire, tel qu'il est posé par l'extension
+CLAUDE=~/.vscode/extensions/anthropic.claude-code-*/resources/native-binary/claude
+
+"$CLAUDE" plugin marketplace add https://github.com/wilfreidlando/vcam-ai-ecosystem
+"$CLAUDE" plugin install discipline@vcam-ecosystem
+"$CLAUDE" plugin list          # pour vérifier
+```
+
+Si vous avez la CLI `claude` dans le `PATH`, remplacez le chemin par
+`claude` — les commandes sont les mêmes.
+
 ### Pour que d'autres personnes en profitent
 
-Poussez ce dépôt sur un git, puis remplacez la première commande :
-
-```
-/plugin marketplace add https://github.com/<vous>/vcam-ai-ecosystem
-```
-
+Poussez ce dépôt sur un git, puis remplacez l'URL dans la première commande.
 C'est tout : le dépôt est une marketplace, le plugin s'installe comme les
 autres.
 
@@ -72,6 +84,15 @@ autres.
    La commande exécutée devient
    `(... vendor/bin/pest --parallel) 2>&1 | tail -n 120 ; exit ${PIPESTATUS[0]}`.
 3. **`/cout`** doit afficher le rapport du jour.
+4. **L'inventaire** doit annoncer les trois agents :
+
+   ```bash
+   claude plugin details discipline@vcam-ecosystem
+   # Agents (3)  testeur, reviseur, lecteur
+   ```
+
+   S'il affiche `Agents (0)`, voir `docs/PLUGIN.md` — c'est le piège qui ne
+   dit rien.
 
 ## Si quelque chose ne va pas
 
@@ -96,4 +117,5 @@ votre configuration, pas la nôtre.
 
 - `docs/MESURES.md` — la baseline mesurée et la méthode.
 - `docs/POLITIQUE-MODELES.md` — le routage par tâche.
+- `docs/PLUGIN.md` — le plugin et ses trois pièges silencieux.
 - Le skill `session-courte` — les cinq gestes, classés par rendement.

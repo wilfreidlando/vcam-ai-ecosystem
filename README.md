@@ -151,6 +151,8 @@ session**, pas à se sentir coupable de la dernière.
 - `docs/MESURES.md` — la baseline mesurée, et la méthode pour la re-mesurer.
 - `docs/POLITIQUE-MODELES.md` — le routage en détail, et ce qu'il faut faire
   quand un seul modèle est disponible.
+- `docs/PLUGIN.md` — comment le plugin est fait, et les trois pièges de
+  manifeste qui le font échouer **silencieusement**.
 - Le dépôt est un **dépôt de plugins** : ajoute le tien dans
   `plugins/<ton-plugin>/` et il sera installable avec le même geste.
 
