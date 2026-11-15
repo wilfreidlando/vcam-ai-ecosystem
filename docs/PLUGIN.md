@@ -83,6 +83,23 @@ que 120 lignes, en préservant le code de sortie :
 }
 ```
 
+Deux étages, parce que deux besoins :
+
+| Famille | Gardé | Couvrant |
+|---|---|---|
+| Lanceurs de tests | **120 lignes** | pest, phpunit, jest, vitest, pytest, go test, cargo test, mvn, gradle, rspec, npm test… |
+| Journaux | **400 lignes** | `docker compose logs`, `docker build`, `npm ci`, `composer install`, `make`, `git log -p` |
+
+Ce qui n'est **pas** tronqué, et pourquoi :
+
+- `cat`, `head`, `tail` — **lire un fichier doit rester complet**. Une
+  troncature ici ferait écrire du code à partir d'un fichier tronqué. Le
+  harnais plafonne déjà toute sortie à `bashOutputMaxChars`.
+- `git diff`, `git show` — le diff du travail en cours est le matériau de la
+  revue ; il doit arriver entier.
+- `git log` déjà borné (`-n`, `--oneline`, `--stat`) — le volume est
+  maîtrisé.
+
 **UserPromptSubmit** — injecter **une ligne** quand le contexte dépasse 55 %
 de la fenêtre de compaction :
 

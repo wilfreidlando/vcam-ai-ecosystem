@@ -1,6 +1,6 @@
 {
   "name": "discipline",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Discipline de consommation : le contexte reste petit, les tours sont mesurés, les agents rendent des résumés, les sorties de tests sont tronquées. La barre d'état montre le remplissage du contexte avant qu'il ne coûte.",
   "author": {
     "name": "VCam"

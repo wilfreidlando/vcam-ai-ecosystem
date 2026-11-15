@@ -54,7 +54,7 @@ cher ». Il commence par **réduire les tours** et **réduire le contexte**.
 | Élément | Ce qu'il fait |
 |---|---|
 | **Barre d'état** | Montre le **remplissage du contexte**, le coût, la branche, le taux de cache. Au-delà de 60 %, elle passe à l'orange et rappelle que `/clear` est gratuit. |
-| **Hook `PreToolUse` (Bash)** | Les commandes de tests sont **tronquées à 120 lignes**. Le code de sortie est préservé : un test qui échoue échoue toujours. |
+| **Hook `PreToolUse` (Bash)** | Les commandes de tests sont **tronquées à 120 lignes**, les journaux (logs, installation, compilation, `git log -p`) à **400**. Le code de sortie est préservé : un test qui échoue échoue toujours. Lire un fichier (`cat`) et relire un diff (`git diff`) ne sont **jamais** tronqués. |
 | **Hook `UserPromptSubmit`** | Mesure le contexte réel (dans la transcription) **avant** chaque tour. Au-delà de 55 %, il rappelle que `/clear` coûte zéro alors que `/compact` coûte une grosse requête. |
 | **`/fin`** | Clore une session : les portes **une seule fois**, le commit, la mesure, et le `/clear` final. |
 | **`/cout`** | Le rapport de consommation, **expliqué** — et une action concrète, pas un sermon. |
