@@ -114,6 +114,7 @@ ne jamais ramener une sortie brute dans la conversation principale.
 | Symptôme | Cause | Solution |
 |---|---|---|
 | Pas de barre d'état | `statusLine` non pris en compte | `~/.claude/settings.json` → `statusLine` ; puis redémarrer |
+| La barre d'état n'apparaît pas **dans le panneau VS Code** | Le panneau est l'**UI native** de l'extension (le SDK Agent embarqué), pas la CLI : la `statusLine` est rendue par l'interface terminal de la CLI | `~/.config/Code/User/settings.json` → `"claudeCode.useTerminal": true`, puis **recharger la fenêtre** (Ctrl+Shift+P → « Developer: Reload Window »). La barre s'affiche sous l'invite du terminal |
 | `ctx-cost : commande introuvable` | `~/.local/bin` absent du `PATH` | l'ajouter, puis `hash -r` |
 | Le test échoue alors qu'il devrait passer | le code de sortie a été perdu | le hook le préserve (`exit ${PIPESTATUS[0]}`) ; vérifier que `bash` est bien le shell |
 | Le hook ne se déclenche pas | plugin non chargé | `/plugin` pour voir l'état ; redémarrer la session |

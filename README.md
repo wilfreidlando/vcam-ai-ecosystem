@@ -106,7 +106,7 @@ Pour désinstaller : `./install.sh --uninstall`.
 
 | Clé | Valeur | Pourquoi |
 |---|---|---|
-| `statusLine` | `barre-etat` | Voir le contexte **avant** qu'il ne coûte. |
+| `statusLine` | `barre-etat` | Voir le contexte **avant** qu'il ne coûte. Rendue par l'interface **terminal** de la CLI : dans le panneau VS Code (UI native), il faut `"claudeCode.useTerminal": true`. |
 | `bashOutputMaxChars` | `20000` | Ce qui entre dans le contexte y reste, relu à chaque tour. 20 k suffisent à lire un échec. |
 | `crossSessionInbound` | `"hold"` | Un message d'une autre session, delivered, est un tour complet qui renvoie tout le contexte. |
 | `idleCompaction` | `false` | Compacter pendant une absence coûte une grosse requête pour rien. |
