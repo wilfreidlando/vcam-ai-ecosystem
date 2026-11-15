@@ -21,7 +21,9 @@
     "./commands/"
   ],
   "agents": [
-    "./agents/"
+    "./agents/lecteur.md",
+    "./agents/testeur.md",
+    "./agents/reviseur.md"
   ],
   "hooks": "./hooks/hooks.json"
 }
