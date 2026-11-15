@@ -9,7 +9,8 @@ facture — installables en deux minutes sur n'importe quel poste.
 ## Le problème, mesuré
 
 Ce n'est pas une impression. Voici une session réelle, mesurée sur les
-transcriptions locales :
+transcriptions locales (les dates sont effacées, la forme est celle qu'on
+observe partout) :
 
 | | |
 |---|---|

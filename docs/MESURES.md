@@ -7,8 +7,12 @@ lui-même.
 
 ## La baseline
 
-Session de travail sur un dépôt PHP/Laravel, un jour, quatre chantiers menés
+Session de travail sur un dépôt applicatif, un jour, quatre chantiers menés
 en parallèle par des sous-agents.
+
+> Les chiffres ci-dessous viennent d'une session réelle, mesurée sur les
+> transcriptions locales. Ils sont **anonymisés** : les dates ont été
+> effacées, la forme est celle qu'on observe partout.
 
 | | |
 |---|---|
@@ -40,7 +44,7 @@ d'écrire 30 fois paie 200 relectures de contexte.
 
 | Jour | Coût | Tours | Par tour |
 |---|---|---|---|
-| 2026-11-04 | 515,2 M | 1 712 | 300,9 k |
+| *une journée* | 515,2 M | 1 712 | 300,9 k |
 
 **Un seul prompt**, suivi de 1 712 tours, à 300 k renvoyés à chaque fois.
 C'est la forme exacte du runaway : un chat qui dure, et une IA qui rend la
@@ -61,7 +65,7 @@ conversation de plus en plus lourde à chaque aller-retour.
 
 ```bash
 ctx-cost                      # tous les jours
-ctx-cost --day 2026-11-14     # un jour
+ctx-cost --day 2026-11-14     # un jour (AAAA-MM-JJ)
 ctx-cost --json               # pour un traitement automatisé
 ```
 
