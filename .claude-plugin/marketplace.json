@@ -1,0 +1,35 @@
+{
+  "name": "vcam-ecosystem",
+  "owner": {
+    "name": "VCam"
+  },
+  "metadata": {
+    "description": "Écosystème d'IA orienté coût : hooks, agents et commandes qui gardent le contexte petit et mesurent la vraie facture."
+  },
+  "plugins": [
+    {
+      "name": "discipline",
+      "source": "./plugins/discipline",
+      "description": "Le contexte reste petit, les tours sont mesurés, les agents rendent des résumés, les sorties de tests sont tronquées. La barre d'état montre le remplissage du contexte avant qu'il ne coûte.",
+      "version": "1.0.0",
+      "author": {
+        "name": "VCam"
+      },
+      "license": "MIT",
+      "keywords": [
+        "tokens",
+        "context",
+        "cost",
+        "hooks",
+        "agents"
+      ],
+      "category": "workflow",
+      "tags": [
+        "tokens",
+        "context",
+        "cost",
+        "productivity"
+      ]
+    }
+  ]
+}
