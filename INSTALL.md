@@ -69,6 +69,21 @@ Poussez ce dépôt sur un git, puis remplacez l'URL dans la première commande.
 C'est tout : le dépôt est une marketplace, le plugin s'installe comme les
 autres.
 
+## Reprendre les règles d'engagement
+
+L'outillage fait gagner des jetons ; il reste une **méthode**. Le dépôt
+fournit un fichier prêt à l'emploi : `templates/CLAUDE.md`.
+
+```bash
+cp templates/CLAUDE.md ~/.claude/CLAUDE.md     # portée utilisateur, tous les dépôts
+# ou
+cp templates/CLAUDE.md /chemin/vers/un/depot/CLAUDE.md   # portée projet
+```
+
+Il dit en trois règles ce qui change la facture : `/clear` entre deux
+chantiers non liés, déléguer la lecture et les tests aux agents légers, et
+ne jamais ramener une sortie brute dans la conversation principale.
+
 ## Vérifier que ça marche
 
 1. **La barre d'état** doit apparaître sous l'invite : modèle, branche,
