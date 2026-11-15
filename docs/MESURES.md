@@ -65,7 +65,7 @@ conversation de plus en plus lourde à chaque aller-retour.
 
 ```bash
 ctx-cost                      # tous les jours
-ctx-cost --day 2026-11-14     # un jour (AAAA-MM-JJ)
+ctx-cost --day AAAA-MM-JJ     # un jour
 ctx-cost --json               # pour un traitement automatisé
 ```
 
