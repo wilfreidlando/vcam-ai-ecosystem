@@ -88,18 +88,37 @@ GIT_LOG_SANS_LIMITE = re.compile(
     r"git\s+log\b(?![^|;&]*(?:-n\s*\d|--max-count|--oneline|--stat))", re.IGNORECASE
 )
 
+# Une commande réelle est souvent composée : `cd /chemin && git log -p`.
+# On regarde donc chaque **segment**, séparé par `&&`, `||`, `;` ou un
+# saut de ligne. C'est le segment qui dit ce que la commande produit.
+SEGMENTS = re.compile(r"\|\||&&|;|\n")
+
+
+def morceaux(command: str) -> list[str]:
+    """Les segments d'une commande composée."""
+    return [m.strip() for m in SEGMENTS.split(command) if m.strip()]
+
 
 def garder(command: str) -> int | None:
     """Le nombre de lignes à garder, ou None si la commande est intacte."""
     if ALREADY_FILTERED.search(command):
         return None
-    if TESTS.match(command):
-        return KEEP_TESTS
-    if JOURNAL.match(command):
+
+    pieces = morceaux(command)
+
+    # Les tests d'abord : c'est la sortie la plus bavarde et la plus inutile.
+    for piece in pieces:
+        if TESTS.match(piece):
+            return KEEP_TESTS
+
+    for piece in pieces:
+        if not JOURNAL.match(piece):
+            continue
         # `git log` déjà borné, ou sans patch : on n'y touche pas.
-        if command.lstrip().lower().startswith("git log") and not GIT_LOG_SANS_LIMITE.search(command):
-            return None
+        if piece.lower().startswith("git log") and not GIT_LOG_SANS_LIMITE.search(piece):
+            continue
         return KEEP_JOURNAL
+
     return None
 
 

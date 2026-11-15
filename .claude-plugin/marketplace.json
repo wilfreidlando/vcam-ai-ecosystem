@@ -11,7 +11,7 @@
       "name": "discipline",
       "source": "./plugins/discipline",
       "description": "Le contexte reste petit, les tours sont mesurés, les agents rendent des résumés, les sorties de tests sont tronquées. La barre d'état montre le remplissage du contexte avant qu'il ne coûte.",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "author": {
         "name": "VCam"
       },
